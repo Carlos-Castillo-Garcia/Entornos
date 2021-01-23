@@ -17,7 +17,7 @@ public class Ejercicio {
 		Nif unnif = new Nif();
 		
 		//Llamada a contructor con valores
-		Nif minif = new Nif(65465455, 'B');
+		Nif minif = new Nif(5296544, 'B');
 		
 		//Acceso a los atributos privados mediante metodos "get..." que son publicos
 		System.out.println(minif.getDni()+ "-"+minif.getLetra());
