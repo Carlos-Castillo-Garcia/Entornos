@@ -31,23 +31,22 @@ class ComplexTest {
 		Complex prueba2 = new Complex(95, 30);
 		
 		Complex resultado = prueba1.multiplicar(prueba2); 
-		Complex r_esperado = new Complex(110, 90);
+		Complex r_esperado = new Complex(1600, 3000);
 		assertEquals(resultado, r_esperado);
 	}
 
 	@Test
 	void testMultiplicarDouble() {
-		Complex prueba1 = new Complex(15, 60);
-		Complex prueba2 = new Complex(95, 30);
+		Complex prueba1 = new Complex(35,0);
 		
-		Complex resultado = prueba1.multiplicar(prueba2); 
-		Complex r_esperado = new Complex(110, 90);
+		Complex resultado = prueba1.multiplicar(35); 
+		Complex r_esperado = new Complex(1750, 1050);
 		assertEquals(resultado, r_esperado);
 	}
 
 	@Test
 	void testDividir() {
-		Complex prueba1 = new Complex(15, 60);
+		Complex prueba1 = new Complex(50, 0);
 		Complex prueba2 = new Complex(95, 30);
 		
 		Complex resultado = prueba1.dividir(prueba2); 
