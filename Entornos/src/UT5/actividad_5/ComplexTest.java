@@ -51,21 +51,21 @@ class ComplexTest {
 	@Test
 	@DisplayName ("Division 2")
 	void testDividir2() {
-		Complex prueba1 = new Complex(52, 9);
-		Complex prueba2 = new Complex(30, 6);
+		Complex prueba1 = new Complex(4, 5);
+		Complex prueba2 = new Complex(2, 2);
 		
 		Complex resultado = prueba1.dividir(prueba2); 
-		Complex r_esperado = new Complex(1.7243589743589745, -0.04487179487179487);
+		Complex r_esperado = new Complex(2.25, 0.25);
 		assertEquals(resultado, r_esperado);
 	}
 	@Test
 	@DisplayName ("Division 3")
 	void testDividir3() {
-		Complex prueba1 = new Complex(52, 9);
-		Complex prueba2 = new Complex(30, 6);
+		Complex prueba1 = new Complex(0, 2);
+		Complex prueba2 = new Complex(1, 0);
 		
 		Complex resultado = prueba1.dividir(prueba2); 
-		Complex r_esperado = new Complex(1.7243589743589745, -0.04487179487179487);
+		Complex r_esperado = new Complex(0, 2);
 		assertEquals(resultado, r_esperado);
 	}
 	
