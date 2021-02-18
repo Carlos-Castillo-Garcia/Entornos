@@ -82,7 +82,6 @@ class ComplexTest {
 	}
 	@Test
 	@DisplayName ("Division 3")
-	
 	void testDividir3() {
 		Complex prueba1 = new Complex(0, 2);
 		Complex prueba2 = new Complex(1, 0);
