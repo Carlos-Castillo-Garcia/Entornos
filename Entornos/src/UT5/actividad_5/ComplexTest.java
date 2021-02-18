@@ -9,19 +9,25 @@ class ComplexTest {
 
 	@Test
 	@DisplayName ("Suma 1")
-	void testSumar() {
+	//sumar dos números complejos: (a, b) + (c, d) = (a + c, b + d)
+	void testSumar() {								//a, b
 		Complex prueba1 = new Complex(15, 60);
+																//c, d
 		Complex prueba2 = new Complex(95, 30);
+		Complex resultado = prueba1.sumar(prueba2);
 		
-		Complex resultado = prueba1.sumar(prueba2); 
-		Complex r_esperado = new Complex(110, 90);
+		double real =15+95;
+		double imag = 60+30;
+		Complex r_esperado = new Complex(real, imag);
 		assertEquals(resultado, r_esperado);
 	}
 
 	@Test
 	@DisplayName ("Multiplicacion con numeros complejos 1")
-	void testMultiplicarComplex() {
+	//multiplicar dos números complejos: (a, b) * (c, d) = (a*c + b*d, a*d + b*c)
+	void testMultiplicarComplex() {			//a, b
 		Complex prueba1 = new Complex(52, 9);
+																//c, d
 		Complex prueba2 = new Complex(30, 6);
 		
 		Complex resultado = prueba1.multiplicar(prueba2); 
@@ -40,12 +46,18 @@ class ComplexTest {
 
 	@Test
 	@DisplayName ("Division 1")
-	void testDividir1() {
+	//(a, b) / (c, d) = ((a*c + b*d) / c^2 + d^2) , (b*c - a*d) / (c^2 + d^2))
+	void testDividir1() {								//a, b
 		Complex prueba1 = new Complex(52, 9);
+																//c, d
 		Complex prueba2 = new Complex(30, 6);
-		
 		Complex resultado = prueba1.dividir(prueba2); 
-		Complex r_esperado = new Complex(1.7243589743589745, -0.04487179487179487);
+		
+		double divisor = 30*30 + 6*6;
+		double real = 52*30 + 9*6;
+		double imag = 9*30 - 52*6;
+		
+		Complex r_esperado = new Complex((double)real/(double)divisor, (double)imag/(double)divisor);
 		assertEquals(resultado, r_esperado);
 	}
 	@Test

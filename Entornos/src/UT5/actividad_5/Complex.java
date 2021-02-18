@@ -55,7 +55,7 @@ public class Complex {
 		return aux;
 	}
 
-	//multiplicar dos números complejos: (a, b) * (c, d) = (a*c – b*d, a*d + b*c)
+	//multiplicar dos números complejos: (a, b) * (c, d) = (a*c + b*d, a*d + b*c)
 	public Complex multiplicar(Complex c){
 		Complex aux = new Complex();
 		aux.real = real * c.real - imag * c.imag;
@@ -73,7 +73,7 @@ public class Complex {
 	}
 
 	//dividir dos números complejos
-	//(a, b) / (c, d) = ((a*c + b*d) / (c^2 + d^2) , (b*c – a*d) / (c^2 + d^2))
+	//(a, b) / (c, d) = ((a*c + b*d) / (c^2 + d^2) , (b*c + a*d) / (c^2 + d^2))
 	public Complex dividir(Complex c){
 		Complex aux = new Complex();
 		aux.real = (real * c.real + imag * c.imag)/(c.real * c.real + c.imag * c.imag);
