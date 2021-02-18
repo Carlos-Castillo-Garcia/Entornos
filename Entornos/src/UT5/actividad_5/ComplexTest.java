@@ -24,23 +24,29 @@ class ComplexTest {
 
 	@Test
 	@DisplayName ("Multiplicacion con numeros complejos 1")
-	//multiplicar dos números complejos: (a, b) * (c, d) = (a*c + b*d, a*d + b*c)
+	//multiplicar dos números complejos: (a, b) * (c, d) = (a*c - b*d, a*d + b*c)
 	void testMultiplicarComplex() {			//a, b
 		Complex prueba1 = new Complex(52, 9);
 																//c, d
 		Complex prueba2 = new Complex(30, 6);
-		
 		Complex resultado = prueba1.multiplicar(prueba2); 
-		Complex r_esperado = new Complex(1506, 582);
+		
+		double real = 52*30 - 9*6;
+		double imag = 52*6 + 9*30;
+		Complex r_esperado = new Complex(real, imag);
 		assertEquals(resultado, r_esperado);
 	}
 
 	@Test
 	@DisplayName (" Multiplicacion con numeros dobles 1")
+	//multiplicar dos números complejos: (a, b) * n =  (a * n, b * n)
 	void testMultiplicarDouble() {
 		Complex prueba1 = new Complex(95, 30);
 		Complex resultado = prueba1.multiplicar(35); 
-		Complex r_esperado = new Complex(3325, 1050);
+		
+		double real = 95*35;
+		double imag = 30*35;
+		Complex r_esperado = new Complex(real, imag);
 		assertEquals(resultado, r_esperado);
 	}
 
@@ -65,9 +71,13 @@ class ComplexTest {
 	void testDividir2() {
 		Complex prueba1 = new Complex(4, 5);
 		Complex prueba2 = new Complex(2, 2);
-		
 		Complex resultado = prueba1.dividir(prueba2); 
-		Complex r_esperado = new Complex(2.25, 0.25);
+		
+		double divisor = 2*2 + 2*2;
+		double real = 4*2 + 5*2;
+		double imag = 5*2 - 4*2;
+		
+		Complex r_esperado = new Complex((double)real/(double)divisor, (double)imag/(double)divisor);
 		assertEquals(resultado, r_esperado);
 	}
 	@Test
@@ -75,9 +85,13 @@ class ComplexTest {
 	void testDividir3() {
 		Complex prueba1 = new Complex(0, 2);
 		Complex prueba2 = new Complex(1, 0);
+		Complex resultado = prueba1.dividir(prueba2);
 		
-		Complex resultado = prueba1.dividir(prueba2); 
-		Complex r_esperado = new Complex(0, 2);
+		double divisor = 1*1 + 0*0;
+		double real = 0*1 + 2*0;
+		double imag = 0*0 - 2*1;
+		Complex r_esperado = new Complex((double)real/(double)divisor, (double)imag/(double)divisor);
+		assertEquals(resultado, r_esperado);
 		assertEquals(resultado, r_esperado);
 	}
 	
