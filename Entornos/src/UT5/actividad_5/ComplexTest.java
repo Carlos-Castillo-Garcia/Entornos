@@ -10,9 +10,8 @@ class ComplexTest {
 	@Test
 	@DisplayName ("Suma 1")
 	//sumar dos números complejos: (a, b) + (c, d) = (a + c, b + d)
-	void testSumar() {								//a, b
+	void testSumar() {
 		Complex prueba1 = new Complex(15, 60);
-																//c, d
 		Complex prueba2 = new Complex(95, 30);
 		Complex resultado = prueba1.sumar(prueba2);
 		
@@ -25,9 +24,8 @@ class ComplexTest {
 	@Test
 	@DisplayName ("Multiplicacion con numeros complejos 1")
 	//multiplicar dos números complejos: (a, b) * (c, d) = (a*c - b*d, a*d + b*c)
-	void testMultiplicarComplex() {			//a, b
+	void testMultiplicarComplex() {
 		Complex prueba1 = new Complex(52, 9);
-																//c, d
 		Complex prueba2 = new Complex(30, 6);
 		Complex resultado = prueba1.multiplicar(prueba2); 
 		
@@ -53,9 +51,8 @@ class ComplexTest {
 	@Test
 	@DisplayName ("Division 1")
 	//(a, b) / (c, d) = ((a*c + b*d) / c^2 + d^2) , (b*c - a*d) / (c^2 + d^2))
-	void testDividir1() {								//a, b
+	void testDividir1() {
 		Complex prueba1 = new Complex(52, 9);
-																//c, d
 		Complex prueba2 = new Complex(30, 6);
 		Complex resultado = prueba1.dividir(prueba2); 
 		
@@ -68,6 +65,7 @@ class ComplexTest {
 	}
 	@Test
 	@DisplayName ("Division 2")
+	//(a, b) / (c, d) = ((a*c + b*d) / c^2 + d^2) , (b*c - a*d) / (c^2 + d^2))
 	void testDividir2() {
 		Complex prueba1 = new Complex(4, 5);
 		Complex prueba2 = new Complex(2, 2);
@@ -82,6 +80,7 @@ class ComplexTest {
 	}
 	@Test
 	@DisplayName ("Division 3")
+	//(a, b) / (c, d) = ((a*c + b*d) / c^2 + d^2) , (b*c - a*d) / (c^2 + d^2))
 	void testDividir3() {
 		Complex prueba1 = new Complex(0, 2);
 		Complex prueba2 = new Complex(1, 0);
@@ -89,7 +88,7 @@ class ComplexTest {
 		
 		double divisor = 1*1 + 0*0;
 		double real = 0*1 + 2*0;
-		double imag = 0*0 - 2*1;
+		double imag = 2*1 - 0*0;
 		Complex r_esperado = new Complex((double)real/(double)divisor, (double)imag/(double)divisor);
 		assertEquals(resultado, r_esperado);
 		assertEquals(resultado, r_esperado);
@@ -97,32 +96,41 @@ class ComplexTest {
 	
 	@Test
 	@DisplayName ("Resta 1")
+	//restar dos números complejos: (a, b) - (c, d) = (a - c, b - d)
 	void testRestar1() {
 		Complex prueba1 = new Complex(-1, 9);
 		Complex prueba2 = new Complex(-35, 6);
-		
 		Complex resultado = prueba1.restar(prueba2); 
-		Complex r_esperado = new Complex(34, 3);
+		
+		double real = -1 - -35;
+		double imag = 9 - 6;
+		Complex r_esperado = new Complex(real, imag);
 		assertEquals(resultado, r_esperado);
 	}
 	@Test
 	@DisplayName ("Resta 2")
+	//restar dos números complejos: (a, b) - (c, d) = (a - c, b - d)
 	void testRestar2() {
 		Complex prueba1 = new Complex(0, 35);
 		Complex prueba2 = new Complex(-1, 35);
-		
 		Complex resultado = prueba1.restar(prueba2); 
-		Complex r_esperado = new Complex(1, 0);
+		
+		double real = 0 - -1;
+		double imag = 35 - 35;
+		Complex r_esperado = new Complex(real, imag);
 		assertEquals(resultado, r_esperado);
 	}
 	@Test
 	@DisplayName ("Resta 3")
+	//restar dos números complejos: (a, b) - (c, d) = (a - c, b - d)
 	void testRestar3() {
-		Complex prueba1 = new Complex();
-		Complex prueba2 = new Complex();
-		
+		Complex prueba1 = new Complex(0, 0);
+		Complex prueba2 = new Complex(0, 0);
 		Complex resultado = prueba1.restar(prueba2); 
-		Complex r_esperado = new Complex(0,0);
+		
+		double real = 0 - 0;
+		double imag = 0 - 0;
+		Complex r_esperado = new Complex(real, imag);
 		assertEquals(resultado, r_esperado);
 	}
 
